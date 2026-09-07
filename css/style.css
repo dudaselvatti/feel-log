@@ -947,3 +947,469 @@ textarea {
   }
 
 }
+
+/* =========================================================
+   ARCHIVE TOOLS
+========================================================= */
+
+.archive-tools {
+  margin-bottom: 42px;
+}
+
+.search-wrapper {
+  margin-bottom: 28px;
+}
+
+.archive-search {
+  width: 100%;
+
+  padding:
+    15px
+    0;
+
+  border:
+    solid
+    var(--border);
+
+  border-width:
+    0
+    0
+    1px;
+
+  outline: none;
+
+  background: transparent;
+  color: var(--text);
+
+  font-size: 1rem;
+}
+
+.archive-search::placeholder {
+  color: #68635d;
+}
+
+.archive-search:focus {
+  border-color: var(--muted);
+}
+
+
+.archive-filter-section {
+  margin-top: 28px;
+}
+
+.archive-mood-filters {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.archive-filter-button {
+  padding:
+    7px
+    11px;
+
+  border:
+    1px
+    solid
+    var(--border);
+
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--muted);
+
+  font-size: 0.75rem;
+}
+
+.archive-filter-button:hover {
+  color: var(--text);
+}
+
+.archive-filter-button.active {
+  border-color: var(--accent);
+
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+
+/* =========================================================
+   DATE FILTER
+========================================================= */
+
+.date-filter-section {
+  margin:
+    32px
+    0
+    38px;
+}
+
+.date-filter-options {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 8px;
+}
+
+.date-filter-button {
+  padding:
+    8px
+    12px;
+
+  border:
+    1px
+    solid
+    var(--border);
+
+  border-radius: 999px;
+
+  background: transparent;
+  color: var(--muted);
+
+  font-size: 0.78rem;
+}
+
+.date-filter-button:hover {
+  color: var(--text);
+}
+
+.date-filter-button.active {
+  border-color: var(--accent);
+
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+
+/* CALENDÁRIO EXPANSÍVEL */
+
+.calendar-container {
+  max-width: 380px;
+
+  margin-top: 24px;
+
+  padding:
+    20px
+    0
+    4px;
+
+  border-top:
+    1px
+    solid
+    var(--border);
+}
+
+.calendar-header {
+  display: grid;
+
+  grid-template-columns:
+    38px
+    1fr
+    38px;
+
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.calendar-header strong {
+  text-align: center;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+
+  text-transform: capitalize;
+}
+
+.calendar-nav-button {
+  width: 36px;
+  height: 36px;
+
+  border:
+    1px
+    solid
+    var(--border);
+
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--muted);
+}
+
+.calendar-nav-button:hover {
+  color: var(--text);
+
+  border-color:
+    var(--muted);
+}
+
+
+.calendar-weekdays,
+.calendar-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(7, 1fr);
+}
+
+.calendar-weekdays {
+  margin-bottom: 6px;
+
+  color: var(--muted);
+
+  font-size: 0.62rem;
+
+  text-align: center;
+}
+
+
+.calendar-day {
+  position: relative;
+
+  aspect-ratio: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  border-radius: 50%;
+
+  background: transparent;
+  color: var(--muted);
+
+  font-size: 0.75rem;
+}
+
+.calendar-day:not(:disabled):hover {
+  background: var(--surface);
+
+  color: var(--text);
+}
+
+.calendar-day.has-entry {
+  color: var(--text);
+}
+
+.calendar-day.has-entry::after {
+  content: "";
+
+  position: absolute;
+
+  bottom: 4px;
+
+  width: 3px;
+  height: 3px;
+
+  border-radius: 50%;
+
+  background: var(--accent);
+}
+
+.calendar-day.today {
+  border:
+    1px
+    solid
+    var(--border-light);
+}
+
+.calendar-day.selected {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+.calendar-day.selected::after {
+  background: var(--accent-text);
+}
+
+
+/* =========================================================
+   ARCHIVE SUMMARY
+========================================================= */
+
+.archive-summary {
+  min-height: 28px;
+}
+
+.archive-summary-text {
+  color: var(--muted);
+
+  font-size: 0.75rem;
+}
+
+
+/* =========================================================
+   MONTH GROUPS
+========================================================= */
+
+.month-group {
+  margin-top: 42px;
+}
+
+.month-group:first-child {
+  margin-top: 16px;
+}
+
+.month-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+
+  gap: 16px;
+
+  padding-bottom: 12px;
+
+  border-bottom:
+    1px
+    solid
+    var(--border);
+}
+
+.month-heading h2 {
+  margin: 0;
+
+  font-size: 1.15rem;
+  font-weight: 500;
+
+  text-transform: capitalize;
+}
+
+.month-heading span {
+  color: var(--muted);
+
+  font-size: 0.7rem;
+}
+
+
+/* =========================================================
+   ENTRY CARD CLICK
+========================================================= */
+
+.entry-card-main {
+  cursor: pointer;
+}
+
+.entry-card-main:hover .entry-preview {
+  color: var(--text);
+}
+
+
+/* =========================================================
+   ENTRY DETAIL
+========================================================= */
+
+.entry-detail-screen {
+  width: min(
+    calc(100% - 36px),
+    var(--content-width)
+  );
+
+  min-height: 100vh;
+
+  margin-inline: auto;
+
+  padding-bottom: 100px;
+}
+
+.entry-detail-header {
+  min-height: 72px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  border-bottom:
+    1px
+    solid
+    var(--border);
+}
+
+.detail-actions {
+  display: flex;
+
+  gap: 18px;
+}
+
+.detail-delete-button:hover {
+  color: var(--danger);
+}
+
+
+.entry-detail-content {
+  max-width: 680px;
+
+  padding:
+    54px
+    0;
+}
+
+.detail-title {
+  margin:
+    10px
+    0
+    18px;
+
+  font-size: clamp(
+    2.3rem,
+    8vw,
+    4.4rem
+  );
+
+  font-weight: 400;
+
+  line-height: 1.04;
+
+  letter-spacing: -0.055em;
+}
+
+.detail-title:empty {
+  display: none;
+}
+
+.detail-moods {
+  margin:
+    0
+    0
+    40px;
+}
+
+.detail-text {
+  white-space: pre-wrap;
+
+  color: var(--text-soft);
+
+  font-size: 1.03rem;
+
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   MOBILE ARCHIVE
+========================================================= */
+
+@media (max-width: 540px) {
+
+  .calendar-section {
+    margin-bottom: 36px;
+  }
+
+  .calendar-day {
+    font-size: 0.72rem;
+  }
+
+  .calendar-day.has-entry::after {
+    bottom: 3px;
+  }
+
+  .entry-detail-screen {
+    width:
+      calc(100% - 32px);
+  }
+
+  .entry-detail-content {
+    padding-top: 38px;
+  }
+
+}

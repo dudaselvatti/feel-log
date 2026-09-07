@@ -2,557 +2,541 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <meta
-    name="theme-color"
-    content="#11100f"
-  >
+    <meta name="theme-color" content="#11100f">
 
-  <title>Feel Log</title>
+    <title>Feel Log</title>
 
-  <link
-    rel="stylesheet"
-    href="./css/style.css"
-  >
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
 
-  <!-- ======================================================
+    <!-- ======================================================
        LOGIN
   ======================================================= -->
 
-  <main
-    id="login-screen"
-    class="login-screen"
-  >
+    <main id="login-screen" class="login-screen">
 
-    <section class="login-container">
+        <section class="login-container">
 
-      <div class="brand">
-        <span class="eyebrow">private journal</span>
+            <div class="brand">
+                <span class="eyebrow">private journal</span>
 
-        <h1>feel.log</h1>
-      </div>
+                <h1>feel.log</h1>
+            </div>
 
-      <p class="login-description">
-        Um lugar para registrar o que passou por aqui.
-      </p>
+            <p class="login-description">
+                Um lugar para registrar o que passou por aqui.
+            </p>
 
-      <form id="login-form">
+            <form id="login-form">
 
-        <div class="field">
+                <div class="field">
 
-          <label for="email">
-            E-mail
-          </label>
+                    <label for="email">
+                        E-mail
+                    </label>
 
-          <input
-            id="email"
-            type="email"
-            autocomplete="email"
-            required
-          >
+                    <input id="email" type="email" autocomplete="email" required>
 
-        </div>
+                </div>
 
-        <div class="field">
+                <div class="field">
 
-          <label for="password">
-            Senha
-          </label>
+                    <label for="password">
+                        Senha
+                    </label>
 
-          <input
-            id="password"
-            type="password"
-            autocomplete="current-password"
-            required
-          >
+                    <input id="password" type="password" autocomplete="current-password" required>
 
-        </div>
+                </div>
 
-        <button
-          class="primary-button"
-          type="submit"
-        >
-          entrar
-        </button>
+                <button class="primary-button" type="submit">
+                    entrar
+                </button>
 
-        <p
-          id="login-error"
-          class="error-message"
-        ></p>
+                <p id="login-error" class="error-message"></p>
 
-      </form>
+            </form>
 
-    </section>
+        </section>
 
-  </main>
+    </main>
 
 
-  <!-- ======================================================
+    <!-- ======================================================
        APLICAÇÃO
   ======================================================= -->
 
-  <main
-    id="app-screen"
-    class="app-shell"
-    hidden
-  >
+    <main id="app-screen" class="app-shell" hidden>
 
-    <!-- CABEÇALHO -->
+        <!-- CABEÇALHO -->
 
-    <header class="topbar">
+        <header class="topbar">
 
-      <span class="app-logo">
-        feel.log
-      </span>
+            <span class="app-logo">
+                feel.log
+            </span>
 
-    </header>
+        </header>
 
 
-    <!-- ==================================================
+        <!-- ==================================================
          HOJE
     =================================================== -->
 
-    <section
-      id="view-today"
-      class="app-view active"
-    >
+        <section id="view-today" class="app-view active">
 
-      <div class="today-hero">
+            <div class="today-hero">
 
-        <span
-          id="today-date"
-          class="eyebrow"
-        ></span>
+                <span id="today-date" class="eyebrow"></span>
 
-        <h1>
-          Como você está?
-        </h1>
+                <h1>
+                    Como você está?
+                </h1>
 
-        <p>
-          Não precisa organizar antes de escrever.
-        </p>
+                <p>
+                    Não precisa organizar antes de escrever.
+                </p>
 
-        <button
-          id="new-entry-button"
-          class="write-button"
-          type="button"
-        >
+                <button id="new-entry-button" class="write-button" type="button">
 
-          <span>
-            escrever sobre hoje
-          </span>
+                    <span>
+                        escrever sobre hoje
+                    </span>
 
-          <span aria-hidden="true">
-            →
-          </span>
+                    <span aria-hidden="true">
+                        →
+                    </span>
 
-        </button>
+                </button>
 
-      </div>
+            </div>
 
 
-      <!-- ÚLTIMA ENTRADA -->
+            <!-- ÚLTIMA ENTRADA -->
 
-      <section class="home-section">
+            <section class="home-section">
 
-        <div class="section-heading">
+                <div class="section-heading">
 
-          <span class="eyebrow">
-            último registro
-          </span>
+                    <span class="eyebrow">
+                        último registro
+                    </span>
 
-        </div>
+                </div>
 
-        <div id="latest-entry"></div>
+                <div id="latest-entry"></div>
 
-        <p
-          id="no-latest-entry"
-          class="empty-message"
-          hidden
-        >
-          Ainda não há nenhum registro.
-        </p>
+                <p id="no-latest-entry" class="empty-message" hidden>
+                    Ainda não há nenhum registro.
+                </p>
 
-      </section>
+            </section>
 
-    </section>
+        </section>
 
 
-    <!-- ==================================================
+        <!-- ==================================================
          ARQUIVO
     =================================================== -->
 
-    <section
-      id="view-archive"
-      class="app-view"
-    >
+        <section id="view-archive" class="app-view">
 
-      <header class="page-header">
+            <header class="page-header">
 
-        <span class="eyebrow">
-          archive
-        </span>
+                <span class="eyebrow">
+                    archive
+                </span>
 
-        <h1>
-          Seus registros
-        </h1>
+                <h1>
+                    Seus registros
+                </h1>
 
-        <p>
-          Um histórico do que passou por aqui.
-        </p>
+                <p>
+                    Um histórico do que passou por aqui.
+                </p>
 
-      </header>
+            </header>
 
 
-      <div
-        id="entries-list"
-        class="entries-list"
-      ></div>
+            <!-- BUSCA -->
+
+            <section class="archive-tools">
+
+                <div class="search-wrapper">
+
+                    <input id="archive-search" class="archive-search" type="search"
+                        placeholder="buscar nos meus registros..." autocomplete="off">
+
+                </div>
 
 
-      <p
-        id="empty-state"
-        class="empty-message"
-        hidden
-      >
-        Nenhum registro por aqui ainda.
-      </p>
+                <!-- FILTROS DE SENTIMENTO -->
 
-    </section>
+                <div class="archive-filter-section">
+
+                    <span class="eyebrow">
+                        sentimento
+                    </span>
+
+                    <div id="archive-mood-filters" class="archive-mood-filters"></div>
+
+                </div>
+
+            </section>
 
 
-    <!-- ==================================================
+            <!-- CALENDÁRIO -->
+
+            <!-- FILTRO POR DATA -->
+
+            <section class="date-filter-section">
+
+                <span class="eyebrow">
+                    período
+                </span>
+
+                <div class="date-filter-options">
+
+                    <button id="show-all-dates" class="date-filter-button active" type="button">
+                        todos os registros
+                    </button>
+
+                    <button id="choose-date" class="date-filter-button" type="button">
+                        escolher data
+                    </button>
+
+                </div>
+
+
+                <!-- CALENDÁRIO EXPANSÍVEL -->
+
+                <div id="calendar-container" class="calendar-container" hidden>
+
+                    <div class="calendar-header">
+
+                        <button id="calendar-previous" class="calendar-nav-button" type="button"
+                            aria-label="Mês anterior">
+                            ←
+                        </button>
+
+
+                        <strong id="calendar-month">
+                            setembro 2026
+                        </strong>
+
+
+                        <button id="calendar-next" class="calendar-nav-button" type="button" aria-label="Próximo mês">
+                            →
+                        </button>
+
+                    </div>
+
+
+                    <div class="calendar-weekdays">
+
+                        <span>D</span>
+                        <span>S</span>
+                        <span>T</span>
+                        <span>Q</span>
+                        <span>Q</span>
+                        <span>S</span>
+                        <span>S</span>
+
+                    </div>
+
+
+                    <div id="calendar-grid" class="calendar-grid"></div>
+
+                </div>
+
+            </section>
+
+            <!-- CONTADOR -->
+
+            <div class="archive-summary">
+
+                <span id="archive-summary" class="archive-summary-text"></span>
+
+            </div>
+
+
+            <!-- ENTRADAS -->
+
+            <div id="entries-list" class="entries-list"></div>
+
+
+            <p id="empty-state" class="empty-message" hidden>
+                Nenhum registro encontrado.
+            </p>
+
+        </section>
+
+        <!-- ==================================================
          CONFIGURAÇÕES
     =================================================== -->
 
-    <section
-      id="view-settings"
-      class="app-view"
-    >
+        <section id="view-settings" class="app-view">
 
-      <header class="page-header">
+            <header class="page-header">
 
-        <span class="eyebrow">
-          settings
-        </span>
+                <span class="eyebrow">
+                    settings
+                </span>
 
-        <h1>
-          Configurações
-        </h1>
+                <h1>
+                    Configurações
+                </h1>
 
-      </header>
+            </header>
 
 
-      <div class="settings-group">
+            <div class="settings-group">
 
-        <div class="settings-item">
+                <div class="settings-item">
 
-          <div>
+                    <div>
 
-            <span class="settings-label">
-              conta conectada
-            </span>
+                        <span class="settings-label">
+                            conta conectada
+                        </span>
 
-            <strong id="user-email">
-              —
-            </strong>
+                        <strong id="user-email">
+                            —
+                        </strong>
 
-          </div>
+                    </div>
 
-        </div>
-
-
-        <button
-          id="logout-button"
-          class="settings-button danger-button"
-          type="button"
-        >
-          sair da conta
-        </button>
-
-      </div>
-
-    </section>
+                </div>
 
 
-    <!-- ==================================================
+                <button id="logout-button" class="settings-button danger-button" type="button">
+                    sair da conta
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================================================
          NAVEGAÇÃO
     =================================================== -->
 
-    <nav
-      id="bottom-navigation"
-      class="bottom-navigation"
-    >
+        <nav id="bottom-navigation" class="bottom-navigation">
 
-      <button
-        class="nav-button active"
-        data-view="today"
-        type="button"
-      >
+            <button class="nav-button active" data-view="today" type="button">
 
-        <span class="nav-icon">
-          ○
-        </span>
+                <span class="nav-icon">
+                    ○
+                </span>
 
-        <span>
-          Hoje
-        </span>
+                <span>
+                    Hoje
+                </span>
 
-      </button>
+            </button>
 
 
-      <button
-        class="nav-button"
-        data-view="archive"
-        type="button"
-      >
+            <button class="nav-button" data-view="archive" type="button">
 
-        <span class="nav-icon">
-          ≡
-        </span>
+                <span class="nav-icon">
+                    ≡
+                </span>
 
-        <span>
-          Arquivo
-        </span>
+                <span>
+                    Arquivo
+                </span>
 
-      </button>
+            </button>
 
 
-      <button
-        class="nav-button"
-        data-view="settings"
-        type="button"
-      >
+            <button class="nav-button" data-view="settings" type="button">
 
-        <span class="nav-icon">
-          ···
-        </span>
+                <span class="nav-icon">
+                    ···
+                </span>
 
-        <span>
-          Config.
-        </span>
+                <span>
+                    Config.
+                </span>
 
-      </button>
+            </button>
 
-    </nav>
+        </nav>
 
-  </main>
+    </main>
+
+    <!-- ======================================================
+     VISUALIZAÇÃO DE REGISTRO
+======================================================= -->
+
+    <main id="entry-detail-screen" class="entry-detail-screen" hidden>
+
+        <header class="entry-detail-header">
+
+            <button id="close-entry-detail" class="text-button" type="button">
+                ← arquivo
+            </button>
 
 
-  <!-- ======================================================
+            <div class="detail-actions">
+
+                <button id="detail-edit-button" class="text-button" type="button">
+                    editar
+                </button>
+
+                <button id="detail-delete-button" class="text-button detail-delete-button" type="button">
+                    excluir
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <article class="entry-detail-content">
+
+            <span id="detail-date" class="eyebrow"></span>
+
+
+            <h1 id="detail-title" class="detail-title"></h1>
+
+
+            <div id="detail-moods" class="entry-moods detail-moods"></div>
+
+
+            <div id="detail-content" class="detail-text"></div>
+
+        </article>
+
+    </main>
+
+    <!-- ======================================================
        EDITOR
   ======================================================= -->
 
-  <main
-    id="editor-screen"
-    class="editor-screen"
-    hidden
-  >
+    <main id="editor-screen" class="editor-screen" hidden>
 
-    <header class="editor-header">
+        <header class="editor-header">
 
-      <button
-        id="close-editor"
-        class="text-button"
-        type="button"
-      >
-        cancelar
-      </button>
+            <button id="close-editor" class="text-button" type="button">
+                cancelar
+            </button>
 
 
-      <span
-        id="editor-mode"
-        class="editor-mode"
-      >
-        novo registro
-      </span>
+            <span id="editor-mode" class="editor-mode">
+                novo registro
+            </span>
 
 
-      <button
-        id="save-entry"
-        class="text-button save-text-button"
-        type="button"
-      >
-        salvar
-      </button>
+            <button id="save-entry" class="text-button save-text-button" type="button">
+                salvar
+            </button>
 
-    </header>
+        </header>
 
 
-    <section class="editor-content">
+        <section class="editor-content">
 
-      <span
-        id="editor-date"
-        class="eyebrow"
-      ></span>
+            <span id="editor-date" class="eyebrow"></span>
 
 
-      <input
-        id="entry-title"
-        class="title-input"
-        type="text"
-        maxlength="100"
-        placeholder="Título, se quiser"
-      >
+            <input id="entry-title" class="title-input" type="text" maxlength="100" placeholder="Título, se quiser">
 
 
-      <textarea
-        id="entry-content"
-        placeholder="Escreva sem precisar organizar tudo primeiro..."
-      ></textarea>
+            <textarea id="entry-content" placeholder="Escreva sem precisar organizar tudo primeiro..."></textarea>
 
 
-      <!-- SENTIMENTOS -->
+            <!-- SENTIMENTOS -->
 
-      <section class="mood-section">
+            <section class="mood-section">
 
-        <span class="eyebrow">
-          como estou
-        </span>
+                <span class="eyebrow">
+                    como estou
+                </span>
 
-        <p class="mood-description">
-          Pode ser mais de uma coisa ao mesmo tempo.
-        </p>
-
-
-        <div
-          id="mood-options"
-          class="mood-options"
-        >
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="feliz"
-          >
-            feliz
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="tranquila"
-          >
-            tranquila
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="apaixonada"
-          >
-            apaixonada
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="animada"
-          >
-            animada
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="esperançosa"
-          >
-            esperançosa
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="ansiosa"
-          >
-            ansiosa
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="cansada"
-          >
-            cansada
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="confusa"
-          >
-            confusa
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="nostálgica"
-          >
-            nostálgica
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="irritada"
-          >
-            irritada
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="triste"
-          >
-            triste
-          </button>
-
-          <button
-            type="button"
-            class="mood-button"
-            data-mood="sobrecarregada"
-          >
-            sobrecarregada
-          </button>
-
-        </div>
-
-      </section>
+                <p class="mood-description">
+                    Pode ser mais de uma coisa ao mesmo tempo.
+                </p>
 
 
-      <div class="editor-status-row">
+                <div id="mood-options" class="mood-options">
 
-        <span
-          id="draft-status"
-          class="draft-status"
-        ></span>
+                    <button type="button" class="mood-button" data-mood="feliz">
+                        feliz
+                    </button>
 
-        <span
-          id="save-status"
-          class="save-status"
-        ></span>
+                    <button type="button" class="mood-button" data-mood="tranquila">
+                        tranquila
+                    </button>
 
-      </div>
+                    <button type="button" class="mood-button" data-mood="apaixonada">
+                        apaixonada
+                    </button>
 
-    </section>
+                    <button type="button" class="mood-button" data-mood="animada">
+                        animada
+                    </button>
 
-  </main>
+                    <button type="button" class="mood-button" data-mood="esperançosa">
+                        esperançosa
+                    </button>
+
+                    <button type="button" class="mood-button" data-mood="ansiosa">
+                        ansiosa
+                    </button>
+
+                    <button type="button" class="mood-button" data-mood="cansada">
+                        cansada
+                    </button>
+
+                    <button type="button" class="mood-button" data-mood="confusa">
+                        confusa
+                    </button>
+
+                    <button type="button" class="mood-button" data-mood="nostálgica">
+                        nostálgica
+                    </button>
+
+                    <button type="button" class="mood-button" data-mood="irritada">
+                        irritada
+                    </button>
+
+                    <button type="button" class="mood-button" data-mood="triste">
+                        triste
+                    </button>
+
+                    <button type="button" class="mood-button" data-mood="sobrecarregada">
+                        sobrecarregada
+                    </button>
+
+                </div>
+
+            </section>
 
 
-  <script
-    type="module"
-    src="./js/app.js"
-  ></script>
+            <div class="editor-status-row">
+
+                <span id="draft-status" class="draft-status"></span>
+
+                <span id="save-status" class="save-status"></span>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+    <script type="module" src="./js/app.js"></script>
 
 </body>
 
