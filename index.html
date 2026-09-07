@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
 
@@ -8,72 +9,551 @@
     content="width=device-width, initial-scale=1.0"
   >
 
+  <meta
+    name="theme-color"
+    content="#11100f"
+  >
+
   <title>Feel Log</title>
 
-  <link rel="stylesheet" href="./css/style.css">
+  <link
+    rel="stylesheet"
+    href="./css/style.css"
+  >
 </head>
 
 <body>
 
-  <main>
-    <section id="login-screen">
+  <!-- ======================================================
+       LOGIN
+  ======================================================= -->
 
-      <h1>Feel Log</h1>
+  <main
+    id="login-screen"
+    class="login-screen"
+  >
 
-      <p>Seu espaço.</p>
+    <section class="login-container">
+
+      <div class="brand">
+        <span class="eyebrow">private journal</span>
+
+        <h1>feel.log</h1>
+      </div>
+
+      <p class="login-description">
+        Um lugar para registrar o que passou por aqui.
+      </p>
 
       <form id="login-form">
 
-        <label for="email">
-          E-mail
-        </label>
+        <div class="field">
 
-        <input
-          type="email"
-          id="email"
-          autocomplete="email"
-          required
+          <label for="email">
+            E-mail
+          </label>
+
+          <input
+            id="email"
+            type="email"
+            autocomplete="email"
+            required
+          >
+
+        </div>
+
+        <div class="field">
+
+          <label for="password">
+            Senha
+          </label>
+
+          <input
+            id="password"
+            type="password"
+            autocomplete="current-password"
+            required
+          >
+
+        </div>
+
+        <button
+          class="primary-button"
+          type="submit"
         >
-
-        <label for="password">
-          Senha
-        </label>
-
-        <input
-          type="password"
-          id="password"
-          autocomplete="current-password"
-          required
-        >
-
-        <button type="submit">
-          Entrar
+          entrar
         </button>
 
-        <p id="login-error"></p>
+        <p
+          id="login-error"
+          class="error-message"
+        ></p>
 
       </form>
 
     </section>
 
+  </main>
 
-    <section id="app-screen" hidden>
 
-      <h1>Como você está hoje?</h1>
+  <!-- ======================================================
+       APLICAÇÃO
+  ======================================================= -->
 
-      <p>
-        O diário está conectado.
+  <main
+    id="app-screen"
+    class="app-shell"
+    hidden
+  >
+
+    <!-- CABEÇALHO -->
+
+    <header class="topbar">
+
+      <span class="app-logo">
+        feel.log
+      </span>
+
+    </header>
+
+
+    <!-- ==================================================
+         HOJE
+    =================================================== -->
+
+    <section
+      id="view-today"
+      class="app-view active"
+    >
+
+      <div class="today-hero">
+
+        <span
+          id="today-date"
+          class="eyebrow"
+        ></span>
+
+        <h1>
+          Como você está?
+        </h1>
+
+        <p>
+          Não precisa organizar antes de escrever.
+        </p>
+
+        <button
+          id="new-entry-button"
+          class="write-button"
+          type="button"
+        >
+
+          <span>
+            escrever sobre hoje
+          </span>
+
+          <span aria-hidden="true">
+            →
+          </span>
+
+        </button>
+
+      </div>
+
+
+      <!-- ÚLTIMA ENTRADA -->
+
+      <section class="home-section">
+
+        <div class="section-heading">
+
+          <span class="eyebrow">
+            último registro
+          </span>
+
+        </div>
+
+        <div id="latest-entry"></div>
+
+        <p
+          id="no-latest-entry"
+          class="empty-message"
+          hidden
+        >
+          Ainda não há nenhum registro.
+        </p>
+
+      </section>
+
+    </section>
+
+
+    <!-- ==================================================
+         ARQUIVO
+    =================================================== -->
+
+    <section
+      id="view-archive"
+      class="app-view"
+    >
+
+      <header class="page-header">
+
+        <span class="eyebrow">
+          archive
+        </span>
+
+        <h1>
+          Seus registros
+        </h1>
+
+        <p>
+          Um histórico do que passou por aqui.
+        </p>
+
+      </header>
+
+
+      <div
+        id="entries-list"
+        class="entries-list"
+      ></div>
+
+
+      <p
+        id="empty-state"
+        class="empty-message"
+        hidden
+      >
+        Nenhum registro por aqui ainda.
       </p>
 
-      <button id="logout-button">
-        Sair
+    </section>
+
+
+    <!-- ==================================================
+         CONFIGURAÇÕES
+    =================================================== -->
+
+    <section
+      id="view-settings"
+      class="app-view"
+    >
+
+      <header class="page-header">
+
+        <span class="eyebrow">
+          settings
+        </span>
+
+        <h1>
+          Configurações
+        </h1>
+
+      </header>
+
+
+      <div class="settings-group">
+
+        <div class="settings-item">
+
+          <div>
+
+            <span class="settings-label">
+              conta conectada
+            </span>
+
+            <strong id="user-email">
+              —
+            </strong>
+
+          </div>
+
+        </div>
+
+
+        <button
+          id="logout-button"
+          class="settings-button danger-button"
+          type="button"
+        >
+          sair da conta
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================================================
+         NAVEGAÇÃO
+    =================================================== -->
+
+    <nav
+      id="bottom-navigation"
+      class="bottom-navigation"
+    >
+
+      <button
+        class="nav-button active"
+        data-view="today"
+        type="button"
+      >
+
+        <span class="nav-icon">
+          ○
+        </span>
+
+        <span>
+          Hoje
+        </span>
+
       </button>
+
+
+      <button
+        class="nav-button"
+        data-view="archive"
+        type="button"
+      >
+
+        <span class="nav-icon">
+          ≡
+        </span>
+
+        <span>
+          Arquivo
+        </span>
+
+      </button>
+
+
+      <button
+        class="nav-button"
+        data-view="settings"
+        type="button"
+      >
+
+        <span class="nav-icon">
+          ···
+        </span>
+
+        <span>
+          Config.
+        </span>
+
+      </button>
+
+    </nav>
+
+  </main>
+
+
+  <!-- ======================================================
+       EDITOR
+  ======================================================= -->
+
+  <main
+    id="editor-screen"
+    class="editor-screen"
+    hidden
+  >
+
+    <header class="editor-header">
+
+      <button
+        id="close-editor"
+        class="text-button"
+        type="button"
+      >
+        cancelar
+      </button>
+
+
+      <span
+        id="editor-mode"
+        class="editor-mode"
+      >
+        novo registro
+      </span>
+
+
+      <button
+        id="save-entry"
+        class="text-button save-text-button"
+        type="button"
+      >
+        salvar
+      </button>
+
+    </header>
+
+
+    <section class="editor-content">
+
+      <span
+        id="editor-date"
+        class="eyebrow"
+      ></span>
+
+
+      <input
+        id="entry-title"
+        class="title-input"
+        type="text"
+        maxlength="100"
+        placeholder="Título, se quiser"
+      >
+
+
+      <textarea
+        id="entry-content"
+        placeholder="Escreva sem precisar organizar tudo primeiro..."
+      ></textarea>
+
+
+      <!-- SENTIMENTOS -->
+
+      <section class="mood-section">
+
+        <span class="eyebrow">
+          como estou
+        </span>
+
+        <p class="mood-description">
+          Pode ser mais de uma coisa ao mesmo tempo.
+        </p>
+
+
+        <div
+          id="mood-options"
+          class="mood-options"
+        >
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="feliz"
+          >
+            feliz
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="tranquila"
+          >
+            tranquila
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="apaixonada"
+          >
+            apaixonada
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="animada"
+          >
+            animada
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="esperançosa"
+          >
+            esperançosa
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="ansiosa"
+          >
+            ansiosa
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="cansada"
+          >
+            cansada
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="confusa"
+          >
+            confusa
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="nostálgica"
+          >
+            nostálgica
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="irritada"
+          >
+            irritada
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="triste"
+          >
+            triste
+          </button>
+
+          <button
+            type="button"
+            class="mood-button"
+            data-mood="sobrecarregada"
+          >
+            sobrecarregada
+          </button>
+
+        </div>
+
+      </section>
+
+
+      <div class="editor-status-row">
+
+        <span
+          id="draft-status"
+          class="draft-status"
+        ></span>
+
+        <span
+          id="save-status"
+          class="save-status"
+        ></span>
+
+      </div>
 
     </section>
 
   </main>
 
-  <script type="module" src="./js/app.js"></script>
+
+  <script
+    type="module"
+    src="./js/app.js"
+  ></script>
 
 </body>
+
 </html>
